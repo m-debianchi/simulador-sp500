@@ -51,7 +51,7 @@ def run_simulator(df, forecast_days=10):
     ensemble = 0.5 * ridge_pred + 0.5 * arima_pred
 
     last_close = df['Close'].iloc[-1]
-    forecast_returns = ensemble[-forecast_days:]
+    forecast_returns = pd.Series(ensemble[-forecast_days:]).reset_index(drop=True)
     forecast_prices = [last_close * (1 + forecast_returns[0])]
     for r in forecast_returns[1:]:
         forecast_prices.append(forecast_prices[-1] * (1 + r))
