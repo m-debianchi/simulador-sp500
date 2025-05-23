@@ -1,0 +1,1 @@
+[conteúdo do arquivo app.py removido aqui para brevidade; será adicionado na criação real do arquivo]
